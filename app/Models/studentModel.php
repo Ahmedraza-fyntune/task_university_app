@@ -13,5 +13,6 @@ class studentModel extends Model
     protected $fillable = [
         'fname','lname','email','Contact','dob','gender','address','teacher_id','stream','academicYears'
     ];
-    
+
 }
+

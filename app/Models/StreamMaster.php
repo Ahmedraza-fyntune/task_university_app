@@ -10,4 +10,5 @@ class StreamMaster extends Model
     use HasFactory;
     protected $table = 'streammaster';
     protected $fillable = ['name'];
+
 }
