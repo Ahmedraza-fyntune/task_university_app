@@ -11,6 +11,6 @@ class teacherModel extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'teachermaster';
     protected $fillable = [
-        'name','address','qualification',''
+        'name','address','qualification','email','contact'
     ];
 }

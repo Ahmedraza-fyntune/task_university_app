@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\studentModel;
+use App\Models\teacher_edu;
 use App\Models\teacherModel;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class TeacherController extends Controller
     public function index()
     {
         //
-        return view('TeacherView');
+        $teacher_edu = teacher_edu::select('id','name')->get();
+        return view('TeacherView',compact('teacher_edu'));
     }
 
     /**
@@ -34,12 +36,16 @@ class TeacherController extends Controller
         $validate = $request->validate([
             'teachname' => ['required','string','max:100'],
             'qual' => ['required','string','max:100'],
-            'address' => ['required','string','max:200']
+            'address' => ['required','string','max:200'],
+            'teacher_contact' => ['required','integer','digits_between:10,20'],
+            'teacher_email' => ['required','email','max:100'],
         ]);
         $createTeacher = teacherModel::create([
             'name' => $request->teachname,
             'qualification' => $request->qual,
-            'address' => $request->address
+            'address' => $request->address,
+            'contact' => $request->teacher_contact,
+            'email' => $request->teacher_email
         ]);
         if($createTeacher)
         {
@@ -124,6 +130,20 @@ class TeacherController extends Controller
     public function destroy(string $id)
     {
         //
-        studentModel::where('id',$id)->delete();
+        $delete = teacherModel::where('id',$id)->delete();
+        if($delete)
+        {
+            return response()->json([
+                'status' => '200',
+                'msg' => 'Teacher deleted successfully'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status' => '400',
+                'msg' => 'Error In Deleting Teacher'
+            ]);
+        }
     }
 }

@@ -14,10 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-             appAdminSeeder::class,
-             StudentSeeder::class,
-            TeacherSeeder::class,
-            StreamMasterMigration::class
+         appAdminSeeder::class,
+         StudentSeeder::class,
+        TeacherSeeder::class,
+        StreamMasterMigration::class,
+        TeacherEducationSeeder::class
         ]);
     }
 }

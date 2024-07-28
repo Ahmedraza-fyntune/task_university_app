@@ -4,13 +4,13 @@
         <i class="bx bx-menu bx-sm"></i>
       </a>
     </div>
-    
+
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
 
-      
 
-      
+
+
       <!-- Search -->
       <div class="navbar-nav align-items-center">
         <div class="nav-item navbar-search-wrapper mb-0">
@@ -21,10 +21,10 @@
         </div>
       </div>
       <!-- /Search -->
-      
 
 
-      
+
+
 
       <ul class="navbar-nav flex-row align-items-center ms-auto">
 
@@ -60,9 +60,9 @@
                 <span class="align-middle">My Profile</span>
               </a>
             </li>
-         
+
             <li>
-              <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+              <a class="dropdown-item" href="{{route('logout')}}" target="_blank">
                 <i class="bx bx-power-off me-2"></i>
                 <span class="align-middle">Log Out</span>
               </a>
@@ -70,17 +70,17 @@
           </ul>
         </li>
         <!--/ User -->
-        
+
 
       </ul>
     </div>
 
-    
+
     <!-- Search Small Screens -->
     <div class="navbar-search-wrapper search-input-wrapper  d-none">
       <input type="text" class="form-control search-input container-xxl border-0" placeholder="Search..." aria-label="Search...">
       <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
     </div>
-    
-    
+
+
 </nav>

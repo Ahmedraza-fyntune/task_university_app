@@ -19,9 +19,11 @@ return new class extends Migration
                 $table->string('name');
                 $table->string('address');
                 $table->string('qualification');
+                $table->string('email',100);
+                $table->string('contact',20);
                 $table->timestamps();
                 $table->softDeletes();
-    
+
             });
         }
     }

@@ -6,7 +6,7 @@
 <html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="vertical-menu-template">
 
 
-<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-user-view-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 16:41:14 GMT -->
+
 <x-head />
 <body>
 
@@ -57,22 +57,22 @@
                     <h5 class="mb-0">Student Registration form</h5> <
                   </div>
                   <div class="card-body">
-                    <form>
+                    <form name="studfrm">
+                        @csrf
                       <div class="mb-3">
                         <label class="form-label" for="fname">First Name</label>
-                        <input type="text" class="form-control" id="fname" name="F-name" placeholder="Your First Name  ">
+                        <input type="text" class="form-control" id="fname" name="fname" placeholder="Your First Name  ">
                         <div class="invalid-feedback"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="lname">Last Name</label>
-                        <input type="text" class="form-control" id="lname" name="L-name" placeholder="Last Name">
+                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
                         <div class="invalid-feedback"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="email">Email</label>
                         <div class="input-group input-group-merge">
                             <input type="text" id="email" class="form-control" name="email" placeholder="john.doe" aria-label="john.doe" aria-describedby="email2">
-                            <span class="input-group-text" id="email2">@example.com</span>
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="form-text"> You can use letters, numbers &amp; periods </div>
@@ -109,6 +109,11 @@
                         <input id="address" class="form-control" name="add" placeholder="Enter Residential Address" type="text"/>
                         <div class="invalid-feedback"></div>
                     </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="address">Academic Years</label>
+                        <input id="address" class="form-control" name="academicYear" placeholder="Year Of Study" type="text"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label" for="address">Teacher</label>
                         <select name="sel_teacher" class="form-control" id="">
@@ -133,8 +138,9 @@
                         </select>
                         <div class="invalid-feedback"></div>
                     </div>
-                      <button type="submit" class="btn btn-primary">Send</button>
-                    </form>
+                      <button type="button" class="btn btn-primary sb_btn">Submit</button>
+                                <div class="valid-feedback server_msg"></div>
+                        </form>
                   </div>
                 </div>
               </div>
@@ -171,11 +177,12 @@
 
 
  <x-core-scripts />
+    <script src="{{asset('Js/student.js')}}"></script>
 
 </body>
 
 
-<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-user-view-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 16:41:14 GMT -->
+
 </html>
 
 <!-- beautify ignore:end -->

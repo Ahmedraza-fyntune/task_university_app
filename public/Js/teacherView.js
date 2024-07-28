@@ -35,6 +35,33 @@ $(function(){
             })
         })
 
+
+    })
+    $(".del_tech").click(function()
+    {
+        const current = $(this)
+        const id = $(this).attr('id')
+        const token = $("[name='_token']").val()
+        $.ajax({
+            url:'delete/'+id,
+            method: 'delete',
+            data:{
+                _token: token
+            },
+            success: function(response){
+                if(response.status == '200')
+                {
+                    alert("Teacher Deleted Successfully")
+                    current.closest("tr").remove()
+
+                }
+                else
+                {
+                    alert("Error In Deleting The Teacher")
+                    return false
+                }
+            }
+        })
     })
 })
 

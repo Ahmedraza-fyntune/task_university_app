@@ -20,7 +20,10 @@ class TeacherModelFactory extends Factory
             //
             'name' => fake()->name(),
             'address' => fake()->address(),
-            'qualification' => 'ssd',
+            'qualification' => rand(1,12),
+            'contact' => fake()->phoneNumber(),
+            'email' => fake()->unique()->safeEmail(),
+
         ];
     }
 }

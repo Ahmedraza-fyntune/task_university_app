@@ -3,7 +3,7 @@
 <html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="vertical-menu-template">
 
 
-<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-user-view-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 16:41:14 GMT -->
+
 <x-head />
 <body>
 
@@ -51,13 +51,32 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="Qualification">Qualification</label>
-                                        <input type="text" class="form-control" name="qual" id="Qualification" placeholder="PHD etc">
+                                        <select class="form-select" id="Qualification" name="qual">
+                                            <option value="">Select Qualification</option>
+                                            @foreach($teacher_edu as $edu)
+                                                <option value="{{$edu->id}}">{{$edu->name}}</option>
+                                            @endforeach
+                                        </select>
                                         <div class="invalid-feedback"></div>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="add">address</label>
                                         <div class="input-group input-group-merge">
                                             <input type="text" id="add" class="form-control" name="address" placeholder="room no 434 street state country" aria-label="john.doe" aria-describedby="add2">
+                                        </div>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="add">Contact</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="add" class="form-control" maxlength="12" name="teacher_contact" placeholder="999999999" aria-label="999999999" aria-describedby="add2">
+                                        </div>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="add">Email</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="add" class="form-control" maxlength="100" name="teacher_email" placeholder="something@mail.com" aria-label="john.doe" aria-describedby="add2">
                                         </div>
                                         <div class="invalid-feedback"></div>
                                     </div>
@@ -94,9 +113,6 @@
     <!-- / Layout wrapper -->
 
 
-    <div class="buy-now">
-        <a href="https://themeselection.com/item/sneat-dashboard-pro-bootstrap/" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-    </div>
 
 
 
@@ -106,7 +122,7 @@
 </body>
 
 
-<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-user-view-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 16:41:14 GMT -->
+
 </html>
 
 <!-- beautify ignore:end -->

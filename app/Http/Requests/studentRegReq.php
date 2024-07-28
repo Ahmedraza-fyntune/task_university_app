@@ -25,15 +25,16 @@ class studentRegReq extends FormRequest
     public function rules(): array
     {
         return [
-            'F-name' => ['required', 'string', 'max:255'],
-            'L-name' => ['required', 'string', 'max:255'],
+            'fname' => ['required', 'string', 'max:255'],
+            'lname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'contact' => ['required', 'string', 'max:10'],
+            'contact' => ['required', 'string', 'max:20'],
             'gender' => ['required', 'string', 'max:255'],
             'add' => ['required', 'string', 'max:255'],
             'dob' => ['required', 'string', 'max:255'],
             'sel_teacher' => ['required','integer'],
-            'sel_subject' => ['required','integer'],
+            'sel_sub' => ['required','integer'],
+            'academicYear' => ['required','integer','digits_between:1,4'],
             //
         ];
     }

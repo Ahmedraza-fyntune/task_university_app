@@ -20,7 +20,7 @@ return new class extends Migration
                 $table->string('fname');
                 $table->string('lname');
                 $table->string('email');
-                $table->string('Contact',12);
+                $table->string('Contact',20);
                 $table->string('dob');
                 $table->enum('gender',['F','M']);
                 $table->string('address');

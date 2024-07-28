@@ -35,7 +35,7 @@ $(function(){
                 if (response.status == '200')  {
                     current.next('valid-feedback').text("Logged in SuccessFully").show()
                     setTimeout(function(){
-                        window.location.href = 'Dashboard'
+                        window.location.href = 'Teacher'
                     },1500)
                 }
                 else

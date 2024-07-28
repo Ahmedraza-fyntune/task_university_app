@@ -30,3 +30,4 @@
   <script src="{{asset('assets/js/modal-edit-user.js')}}"></script>
 <script src="{{asset('assets/js/app-user-view.js')}}"></script>
 <script src="{{asset('assets/js/app-user-view-account.js')}}"></script>
+

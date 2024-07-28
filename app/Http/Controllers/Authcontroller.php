@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Authcontroller extends Controller
 {
@@ -14,12 +16,14 @@ class Authcontroller extends Controller
     }
     public function AuthUser(Request $request)
     {
-        $username = $request->username;
-        $password = md5($request->password);
+        $username = $request->email;
+        $password = ($request->password);
         $credentials = [
-            'email'=> $username,
+            'email' => $username,
             'password' => $password
         ];
+
+        $u_pass = User::select("password")->where('email',$request->email)->get()->all();
         if(Auth::attempt($credentials)){
             return response()->json([
                 'status' => '200',
@@ -33,5 +37,11 @@ class Authcontroller extends Controller
                 'msg' => 'invald credentials'
             ]);
         }
+    }
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('/');
     }
 }

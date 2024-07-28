@@ -16,6 +16,7 @@ class studentModelFactory extends Factory
      */
     public function definition(): array
     {
+        $gender_arr = ['F','M'];
         return [
             //
             'fname' => fake()->name(),
@@ -23,9 +24,10 @@ class studentModelFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'Contact' => fake()->phoneNumber(),
             'dob'=> '',
-            'gender' => '',
+            'gender' => 'F',
             'address' => fake()->address(),
             'teacher_id' =>rand(1,20),
+            'stream' => rand(1,12),
             'academicYears' => fake()->year('now'),
         ];
     }
