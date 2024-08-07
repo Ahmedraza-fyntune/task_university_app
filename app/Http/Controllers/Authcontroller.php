@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthValidationReq;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,9 @@ class Authcontroller extends Controller
     {
         return view('login');
     }
-    public function AuthUser(Request $request)
+    public function AuthUser(AuthValidationReq $request)
     {
+
         $username = $request->email;
         $password = ($request->password);
         $credentials = [

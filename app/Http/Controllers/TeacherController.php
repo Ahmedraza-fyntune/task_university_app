@@ -68,7 +68,7 @@ class TeacherController extends Controller
      */
     public function show(Request $request)
     {
-        //
+
         $teachers  = teacherModel::select("id",'name','address','qualification')->get()->all();
         return view('teacherListView',compact('teachers'));
     }

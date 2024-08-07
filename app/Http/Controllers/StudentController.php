@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\studentRegReq;
+use App\Http\Requests\updateStudentReq;
 use App\Models\StreamMaster;
 use App\Models\studentModel;
 use App\Models\teacherModel;
@@ -22,7 +23,7 @@ class StudentController extends Controller
     }
     public function createStudent(studentRegReq $request)
     {
-//        dd($request->all());
+
         $student = studentModel::insert([
            'fname' => $request->fname,
            'lname' => $request->lname,
@@ -52,8 +53,9 @@ class StudentController extends Controller
         }
     }
 
-    public function UpdateStudent(Request $request,int $id)
+    public function UpdateStudent(updateStudentReq $request,int $id)
     {
+
         $updarecord = studentModel::where('id',$id)->update([
             'fname' => $request->mdl_fname,
             'lname' => $request->mdl_lname,
